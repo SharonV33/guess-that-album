@@ -99,6 +99,6 @@ Again, try to add extra features from the list below to your basic chat app. Do 
 - Show who’s online.
 - Add private messaging.
 
-*Extra challenge: Start working on your final app. [Look at the exercises from week 2](./week-2.md), pick an API and think of a strong concept. Start working on that instead of a barebone app*.
+*Extra challenge: Start working on your final app. [Look at the exercises from week 2](week-2.md), pick an API and think of a strong concept. Start working on that instead of a barebone app*.
 
 *Extra challenge: Instead of socket.io, use the native [server-sent-events](https://www.voorhoede.nl/en/blog/real-time-communication-with-server-sent-events/)! It works very well although sending messages from client to server is trickier.*

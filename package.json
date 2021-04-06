@@ -1,0 +1,26 @@
+{
+  "name": "chatapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharonV33/real-time-web-2021.git"
+  },
+  "author": "Sharon Veldman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SharonV33/real-time-web-2021/issues"
+  },
+  "homepage": "https://github.com/SharonV33/real-time-web-2021#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "node": "^15.12.0",
+    "nodemon": "^2.0.7"
+  }
+}
