@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/SharonV33/real-time-web-2021#readme",
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "http": "^0.0.1-security",
     "node": "^15.12.0",
