@@ -49,6 +49,9 @@ section ul > li {
     font-size: .8rem;
     overflow-y: hidden;
 }
+section ul > li span {
+    font-weight: bold;
+}
 section form {
     margin: 0 0 1rem 0; padding: 0;
     width: 36rem;

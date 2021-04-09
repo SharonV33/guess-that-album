@@ -28,6 +28,7 @@ app.get('/', async function(req, res) {
     console.log(randomNumber)
     const randomAlbum = data[randomNumber]
 
+
     res.render('pages/index.ejs', {
         albums: randomAlbum
     })
@@ -37,8 +38,11 @@ app.get('/', async function(req, res) {
 io.on('connection', (socket) => {
     console.log('a user connected')
 
+    socket.on('answer', (answer) => {
+        io.emit('answer',answer)
+    })
+
     socket.on('message', (message) => {
-        // console.log('message: ' + message)
         io.emit('message', message)
     })
 

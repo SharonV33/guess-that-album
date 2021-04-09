@@ -3,13 +3,31 @@
 <main>
     <section>
         <h2>Chat</h2>
-        <ul></ul>
+        <ul class="messages"></ul>
         <form>
             <input id="username" type="text" autocomplete="off">
             <input id="message" type="text" autocomplete="off">
+            <!--<input id="answer" type="text" value="<%= albums.name %>">-->
             <button>Send</button>
         </form>
     </section>
+    <p>
+        berichten waar je eer reactie op krijgt:
+        <ul>
+            <li>
+                hoi
+            </li>
+            <li>
+                vertel een grap
+            </li>
+            <li>
+                heb je een handige link voor cmd?
+            </li>
+            <li>
+                wat is het beste muziek genre?
+            </li>
+        </ul>
+    </p>
     <input type="checkbox">
         <img src='<%= albums.image[2]['#text'] %>'>
 
