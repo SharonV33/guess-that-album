@@ -8,6 +8,7 @@
 * [Usage and features](#usage-and-features)
 * [Working with sockets](#working-with-sockets)
 * [Data management](#data-management)
+* [to do](#to-do)
 
 ## Installing
 clone the repo
@@ -37,3 +38,14 @@ http://localhost:8080/
 ## Working with sockets
 
 ## Data management 
+
+## To do
+* [x] set up sockets
+* [x] connect to last.fm api
+* [x] blur album art
+* [ ] save username in localstorage
+* [ ] set up buttons based on album names
+* [ ] create point system based on correct guesses
+* [ ] create leaderboard (maybe with cloud firestore?)
+* [ ] make points based on how fast the guess was made
+* [ ] add hints
