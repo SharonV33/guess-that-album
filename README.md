@@ -45,6 +45,7 @@ By showing the user a blurred version of an album cover, the users can guess whi
 to really make it a game, I use a score board where I keep track of the amount of correct guessed made by each user. After the album is
 guessed by a user, the album will de-blurr for everyone playing at that moment. The name of the winner will also be displayed for a few
 seconds. After this a new album will be selected and shown (blurred) for the users to guess.
+<img src="https://i.ibb.co/ph2pX3Z/concept.jpg" width="500">
 
 ## Last.FM api
 For this web app, I use data from the [last.FM api](https://www.last.fm/api). I've worked with this API a few times now so I know my way around it.
@@ -84,6 +85,7 @@ a feature which would not only send a message but also a name.
 * compression - general server compression
 
 ## To do
+
 **Must have**
 * [x] set up sockets
 * [x] connect to last.fm api
