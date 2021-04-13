@@ -43,12 +43,12 @@ this genre. Even though I never know what an album is called, I thought it would
 
 By showing the user a blurred version of an album cover, the users can guess which album title belongs to the blurred image. In order
 to really make it a game, I use a score board where I keep track of the amount of correct guessed made by each user. After the album is
-guessed by a user, the album will de-blurr for everyone playing at that moment. The name of the winner will also be displayed for a few
+guessed by a user, the album will de-blur for everyone playing at that moment. The name of the winner will also be displayed for a few
 seconds. After this a new album will be selected and shown (blurred) for the users to guess.
 <img src="https://i.ibb.co/ph2pX3Z/concept.jpg" width="500">
 
 ## Last.FM api
-For this web app, I use data from the [last.FM api](https://www.last.fm/api). I've worked with this API a few times now so I know my way around it.
+For this web app, I use data from the [last.FM api](https://www.last.fm/api). I've worked with this API a few times now, so I know my way around it.
 The specific type of data I want is the top albums from the genre "metalcore", Last.FM has a standard function url which allows me
 to get all the data I want from a single endpoint. This function is "get top albums". The url which I use as an endpoint is as follows 
 ```
@@ -57,11 +57,11 @@ https://www.last.fm/api/2.0/?method=tag.gettopalbums&tag=GENRE&api_key=YOUR_API_
 In order to use this link, you need to add an api key, this can be gained by creating an account. Passing a genre (or as the api calls it, tag)
 with the url is required, I changed this to metalcore. The url can also be changed to set a limit of albums to be fetched, the
 standard is 50 which I decided to keep for testing, this could easily be changed to a larger number for production
-By using a XMLHttpRequest on the link, I was able to get the data quite easily. The data I recieved looked like this:
+By using a XMLHttpRequest on the link, I was able to get the data quite easily. The data I received looked like this:
 
 <img src="https://i.ibb.co/x3d6YrY/Screenshot-2021-02-05-at-10-27-03.png" width="500">
 
-Each album has a name, a url to the related page on last.fm, a unique identifyer, information about the artist and 4 formats
+Each album has a name, an url to the related page on last.fm, a unique identifier, information about the artist and 4 formats
 of album art. This structure is repeated for each album, making it easy to create a template which I can fill with data.
 
 
@@ -73,6 +73,8 @@ and the example of my teacher I was ready to get started. I first downloaded the
 a feature which would not only send a message but also a name. 
 
 ## Data management 
+Data lifecycle diagram
+<img src="https://i.ibb.co/JrLJ7gm/Screenshot-2021-04-13-at-12-23-24.png" width="500">
 
 ## NPM packages
 * Express.js - route handling
