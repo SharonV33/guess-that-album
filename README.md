@@ -92,9 +92,12 @@ Data lifecycle diagram
 * [x] set up sockets
 * [x] connect to last.fm api
 * [x] blur album art
-* [ ] check answers 
-* [ ] create point system based on correct guesses
-* [ ] create leaderboard
+* [x] check answers 
+* [x] create point system based on correct guesses
+* [x] create leaderboard
+* [ ] update album after correct guess
+* [ ] update leaderboard after correct guess
+* [ ] show winner's name after correct guess
 
 **Nice to haves**
 * [ ] save username in localstorage

@@ -89,7 +89,6 @@ app.get('/', async function(req, res) {
         await selectRandomAlbum()
     }
 
-
     res.render('pages/index.ejs', {
         album: album,
         leaderBoard: leaderBoard
