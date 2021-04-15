@@ -1,6 +1,6 @@
 # Guess that album
-
 [livelink](https://guessthatalbum.herokuapp.com/)
+<img src="https://i.ibb.co/2db0C76/Screenshot-2021-04-15-at-14-58-53.png" width="700">
 ## About the app
 Want to prove to your friends that you know the most about metalcore? Prove yourself
 by getting on top of the leaderboard of "guess that album". This is the ultimate test
@@ -45,6 +45,7 @@ By showing the user a blurred version of an album cover, the users can guess whi
 to really make it a game, I use a score board where I keep track of the amount of correct guessed made by each user. After the album is
 guessed by a user, the album will de-blur for everyone playing at that moment. The name of the winner will also be displayed for a few
 seconds. After this a new album will be selected and shown (blurred) for the users to guess.
+first sketch: 
 <img src="https://i.ibb.co/ph2pX3Z/concept.jpg" width="500">
 
 ## Last.FM api
@@ -71,6 +72,13 @@ can be used. My teacher, Justus, showed an example in a lecture using "socket.io
 on the official website. I found the documentation quite easy to follow and there were quite a lot of examples. Together with the documentation
 and the example of my teacher I was ready to get started. I first downloaded the example and made sure I understood it, then I added
 a feature which would not only send a message but also a name. 
+
+My next step was using the name and message for making a guess. This guess will then need to be compared to the name of the current album. If the 
+guess is correct, I need to change the current album and add that user to the leaderboard. For all this, I added a message type to the message. If the user
+submits a guess, the message type is 'guess'. In this step, the user's name and guess. Next, I check the answer. If the answer is correct I send a message
+with the type 'albumGuessed'. With this message type, I un-blur the album art, show a message with the name of the winner and update the leaderboard. After this, 
+I set a timeout in my project of 3 seconds to keep the un-blurred album on screen for a bit. Lastly, I emit a message with the type 'newAlbum'. This
+re-runs the function which saves a random album into the localstorage of the server and places this image into the page. After this the cycle starts again.
 
 ## Data management 
 Data lifecycle diagram

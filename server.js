@@ -107,6 +107,10 @@ io.on('connection', (socket) => {
                         type: 'albumGuessed',
                         winner: message.username,
                     })
+                    io.emit('message', {
+                        type: 'updateLeaderboard',
+                        leaderBoard: localStorage.getItem('leaderBoard'),
+                    })
                 }
 
                 setTimeout(function () {
@@ -114,19 +118,12 @@ io.on('connection', (socket) => {
                         type: 'newAlbum',
                         album: localStorage.getItem('currentAlbum')
                     })
-                    io.emit('message', {
-                        type: 'updateLeaderboard',
-                        leaderBoard: localStorage.getItem('leaderBoard'),
-                    })
+
                 }, 3000)
 
                 break;
         }
     })
-
-    // socket.on('disconnect', () => {
-         // console.log('user disconnected')
-    // })
 })
 
 http.listen(port, () => {

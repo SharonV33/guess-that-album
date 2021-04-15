@@ -36,6 +36,14 @@ socket.on('message', function(message) {
             document
                 .querySelector('#blurAlbum')
                 .removeAttribute('checked')
+
+            document
+                .querySelector('#albumArtwork')
+                .setAttribute('src', newAlbum.image[3]['#text'])
+
+            document
+                .querySelector('.winner')
+                .innerHTML = `congrats to ${message.winner} for guessing the album`
             break;
 
         case 'newAlbum':
@@ -45,9 +53,11 @@ socket.on('message', function(message) {
             document
                 .querySelector('#blurAlbum')
                 .setAttribute('checked', 'checked')
+
             document
-                .querySelector('#albumArtwork')
-                .setAttribute('src', newAlbum.image[3]['#text'])
+                .querySelector('.winner')
+                .innerHTML = ``
+
             break;
     }
 })
