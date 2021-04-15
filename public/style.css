@@ -1,7 +1,9 @@
 body {
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
     overflow: hidden;
     min-height: 100vh;
     min-width: 100vw;
@@ -9,16 +11,19 @@ body {
 }
 
 main {
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }
+
 section {
-    width: 40rem;
     height: 30rem;
+    margin-top: 3em;
+    margin-right: 5em;
     background: rgba(255,255,255,0.4);
     backdrop-filter: blur(1rem);
     border-radius: 2rem;
@@ -27,39 +32,59 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3em;
 }
-section h2 {
-    margin: 0; padding: 0;
+
+#leaderboard {
+    width: 20rem;
+    overflow-y: hidden;
+}
+
+#leaderboard ol {
+    padding: 0;
+    height: 90%;
+    width: 80%;
+    overflow-x: scroll;
+}
+
+#leaderboard ol li {
+    margin: 1em 0;
+}
+
+#game {
+    width: 40rem;
+}
+
+h2 {
+    margin: 0;
     padding-top: 1rem;
     font-weight: lighter;
     text-transform: uppercase;
-    font-size: 1rem;
 }
-section ul {
-    margin: 0; padding: .2em;
-    list-style-type: none;
-    flex-grow: 2;
-    width: 37em;
-    overflow-x: scroll;
-    overflow-y: hidden;
+
+img {
+    margin: 2.5em 0;
+    border-radius: 0;
 }
-section ul > li {
-    padding: 0.5rem 1rem;
-    font-size: .8rem;
-    overflow-y: hidden;
+
+#blurAlbum {
+    display: none;
 }
-section ul > li span {
-    font-weight: bold;
+
+#blurAlbum:checked + img {
+    filter: blur(5px);
 }
-section form {
-    margin: 0 0 1rem 0; padding: 0;
+
+#game form {
+    margin: 0 0 1rem 0;
+    padding: 0;
     width: 36rem;
     height: 2rem;
     display: flex;
 }
-section form input {
-    margin: 0; padding: 0 1rem;
+
+#game form input {
+    margin: 0;
+    padding: 0 1rem;
     border: none;
     height: 2rem;
     flex-grow: 2;
@@ -67,7 +92,8 @@ section form input {
     opacity: 80%;
     outline: none;
 }
-section form > button {
+
+#game form > button {
     background: rgba(92, 0, 255, 0.5);
     border: 1px solid white;
     border-top-right-radius: 2rem;
@@ -78,14 +104,4 @@ section form > button {
     color: white;
     font-size: 1rem;
     font-weight: 700;
-}
-
-img {
-    margin-top: 5em;
-    border-radius: 0;
-}
-
-input[type=checkbox]:checked + img {
-    filter: blur(5px);
-
 }

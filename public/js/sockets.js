@@ -1,44 +1,56 @@
+
 const socket = io()
-const messages = document.querySelector('.messages')
-const message = document.querySelector('#message')
 const user = document.querySelector('#username')
-// const answer = document.querySelector('#answer')
+const guess = document.querySelector('#guess')
+const form = document.querySelector('form')
+// const leaderboard = document.querySelector('#leaderboard')
 
-document.querySelector('form').addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => {
     event.preventDefault()
-    if (message.value && user.value) {
-        socket.emit('message', {"username": user.value, "message": message.value})
+    if (guess.value && user.value) {
+        socket.emit('message', {
+            username: user.value,
+            guess: guess.value,
+            type: 'guess'
+        })
 
-        message.value = ''
-        user.value = ''
+        guess.value = ''
     }
 })
-
-
 
 socket.on('message', function(message) {
-    const element = document.createElement('li')
-    const response = document.createElement('li')
-    const userMessage = message.message.toLowerCase()
-    element.innerHTML = `<span>${message.username}:</span> ${message.message}`
-    messages.appendChild(element)
+    switch (message.type){
+        case 'updateLeaderboard':
+            const leaderBoard = JSON.parse(message.leaderBoard)
+            document
+                .querySelector('#leaderboard ul')
+                .innerHTML = leaderBoard
+                    .map((item) => `<li>${item.name}: ${item.score}</li>`)
+                    .join('')
 
-    if ( userMessage === 'hoi') {
-        response.innerHTML = '<span>computer:</span> hallo'
-        messages.appendChild(response)
-    }
-    if ( userMessage === 'vertel een grap') {
-        response.innerHTML = '<span>computer:</span> jouw sociale leven tijdens corona'
-        messages.appendChild(response)
-    }
-    if ( userMessage === 'heb je een handige link voor cmd?') {
-        response.innerHTML = `<span>computer:</span> hva.nl/uitschrijven`
-        messages.appendChild(response)
-    }
-    if ( userMessage === 'wat is het beste muziek genre?') {
-        response.innerHTML = '<span>computer:</span> metalcore sowieso'
-        messages.appendChild(response)
-    }
+            break;
 
-    messages.scrollTop = messages.scrollHeight
+        case 'albumGuessed':
+            console.log('correct guess made by ', message.winner)
+            // Set blur to false and show winner's name
+            document
+                .querySelector('#blurAlbum')
+                .removeAttribute('checked')
+            break;
+
+        case 'newAlbum':
+            const newAlbum = JSON.parse(message.album)
+            // Set blur to true
+            // load new album art
+            document
+                .querySelector('#blurAlbum')
+                .setAttribute('checked', 'checked')
+            document
+                .querySelector('#albumArtwork')
+                .setAttribute('src', newAlbum.image[3]['#text'])
+            break;
+    }
 })
+
+
+
