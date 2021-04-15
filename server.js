@@ -104,10 +104,6 @@ io.on('connection', (socket) => {
 
                 if (isCorrect) {
                     io.emit('message', {
-                        type: 'updateLeaderboard',
-                        leaderBoard: localStorage.getItem('leaderBoard'),
-                    })
-                    io.emit('message', {
                         type: 'albumGuessed',
                         winner: message.username,
                     })
@@ -117,6 +113,10 @@ io.on('connection', (socket) => {
                     io.emit('message', {
                         type: 'newAlbum',
                         album: localStorage.getItem('currentAlbum')
+                    })
+                    io.emit('message', {
+                        type: 'updateLeaderboard',
+                        leaderBoard: localStorage.getItem('leaderBoard'),
                     })
                 }, 3000)
 

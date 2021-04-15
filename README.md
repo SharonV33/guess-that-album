@@ -95,7 +95,7 @@ Data lifecycle diagram
 * [x] check answers 
 * [x] create point system based on correct guesses
 * [x] create leaderboard
-* [ ] update album after correct guess
+* [x] update album after correct guess
 * [ ] update leaderboard after correct guess
 * [ ] show winner's name after correct guess
 

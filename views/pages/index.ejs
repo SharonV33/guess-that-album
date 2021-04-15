@@ -1,24 +1,27 @@
 <%- include('../partials/head') %>
 
 <main>
-    <section id="leaderboard">
-        <h2>Leader board</h2>
-        <ol>
-            <% leaderBoard.forEach(function(user){ %>
-                <li> <%= user.name%>: <%= user.score%></li>
-            <% }) %>
-        </ol>
-    </section>
+    <h1>Guess that album</h1>
+
+
     <section id="game">
-        <h2>Guess that album</h2>
-        <input id="blurAlbum" type="checkbox" checked>
-        <img id="albumArtwork" src='<%= album.image[3]['#text'] %>' alt="album art">
-        <form>
-            <input id="username" type="text" autocomplete="off" placeholder="name">
-            <input id="guess" type="text" autocomplete="off" placeholder="answer">
-            <button type="submit">Send</button>
-        </form>
+        <div class="artwork">
+            <input id="blurAlbum" type="checkbox" checked>
+            <img id="albumArtwork" src='<%= album.image[3]['#text'] %>' alt="album art">
+        </div>
+        <div class="leaderboard">
+            <ol>
+                <% leaderBoard.forEach(function(user){ %>
+                    <li> <%= user.name%>: <%= user.score%></li>
+                <% }) %>
+            </ol>
+        </div>
     </section>
+    <form>
+        <input id="username" type="text" autocomplete="off" placeholder="name">
+        <input id="guess" type="text" autocomplete="off" placeholder="answer">
+        <button type="submit">Send</button>
+    </form>
 </main>
 <script src="/socket.io/socket.io.js"></script>
 
