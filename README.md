@@ -87,7 +87,7 @@ Data lifecycle diagram
 
 ## To do
 
-**Should have**
+**Must have**
 * [x] set up sockets
 * [x] connect to last.fm api
 * [x] blur album art
