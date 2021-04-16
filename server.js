@@ -73,7 +73,6 @@ function addScore (name) {
         score: user ? user.score + 1 : 1
     }]
     const sortedLeaderBoard = newLeaderBoard.sort((a, b) => b.score - a.score)
-    console.log(sortedLeaderBoard)
     //store new leaderboard in localstorage
     return localStorage.setItem('leaderBoard', JSON.stringify(newLeaderBoard))
 }

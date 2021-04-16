@@ -21,38 +21,40 @@ form.addEventListener('submit', (event) => {
 socket.on('message', function(message) {
     switch (message.type){
         case 'updateLeaderboard':
-            const leaderBoard = JSON.parse(message.leaderBoard)
+            const leaderBoard = JSON.stringify(message.leaderBoard)
+            console.log(leaderBoard)
+            const leaderboardItems = leaderBoard
+                .map((item) => `<li>${item.name}: ${item.score}</li>`)
+                .join('')
             document
                 .querySelector('#leaderboard ul')
-                .innerHTML = leaderBoard
-                    .map((item) => `<li>${item.name}: ${item.score}</li>`)
-                    .join('')
+                .innerHTML = leaderboardItems
 
             break;
 
         case 'albumGuessed':
-            console.log('correct guess made by ', message.winner)
+            // console.log('correct guess made by ', message.winner)
             // Set blur to false and show winner's name
             document
                 .querySelector('#blurAlbum')
                 .removeAttribute('checked')
-
-            document
-                .querySelector('#albumArtwork')
-                .setAttribute('src', newAlbum.image[3]['#text'])
-
             document
                 .querySelector('.winner')
                 .innerHTML = `congrats to ${message.winner} for guessing the album`
             break;
 
         case 'newAlbum':
-            const newAlbum = JSON.parse(message.album)
             // Set blur to true
             // load new album art
+            const newAlbum = JSON.parse(message.album)
+
             document
                 .querySelector('#blurAlbum')
                 .setAttribute('checked', 'checked')
+
+            document
+                .querySelector('#albumArtwork')
+                .setAttribute('src', newAlbum.image[3]['#text'])
 
             document
                 .querySelector('.winner')

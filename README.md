@@ -4,7 +4,7 @@
 ## About the app
 Want to prove to your friends that you know the most about metalcore? Prove yourself
 by getting on top of the leaderboard of "guess that album". This is the ultimate test
-for any metalcore fans
+for any metalcore fans.
 
 ## Table of content
 * [Installing](#installing)
