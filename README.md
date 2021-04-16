@@ -6,15 +6,6 @@ Want to prove to your friends that you know the most about metalcore? Prove your
 by getting on top of the leaderboard of "guess that album". This is the ultimate test
 for any metalcore fans.
 
-## Table of content
-* [Installing](#installing)
-* [Concept](#concept)
-* [Last.FM api](#Last.FM-api)
-* [Working with sockets](#working-with-sockets)
-* [Data management](#data-management)
-* [NPM packages](#npm-packages)
-* [To do](#to-do)
-
 ## Installing
 clone the repo
 ```
@@ -96,7 +87,7 @@ Data lifecycle diagram
 
 ## To do
 
-**Must have**
+**Should have**
 * [x] set up sockets
 * [x] connect to last.fm api
 * [x] blur album art
@@ -107,8 +98,10 @@ Data lifecycle diagram
 * [ ] update leaderboard after correct guess
 * [ ] show winner's name after correct guess
 
-**Nice to haves**
+**Could haves**
 * [ ] save username in localstorage
 * [ ] make points based on how fast the guess was made
 * [ ] add hints
+
+**Would haves**
 * [ ] allow different genre's
