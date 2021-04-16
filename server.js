@@ -16,7 +16,7 @@ app.set('views', 'views')
 app.use(express.static('public'))
 app.use(compression())
 
-localStorage = new LocalStorage('./scratch')
+localStorage = new LocalStorage('./localstorage')
 /**
  * Select a random album from the top 50 metalcore albums from last.FM and
  * store it in local storage
