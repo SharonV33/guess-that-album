@@ -1,6 +1,6 @@
 # Guess that album
 [livelink](https://guessthatalbum.herokuapp.com/)
-<img src="https://i.ibb.co/2db0C76/Screenshot-2021-04-15-at-14-58-53.png" width="700">
+<img src="https://i.ibb.co/2db0C76/Screenshot-2021-04-15-at-14-58-53.png">
 ## About the app
 Want to prove to your friends that you know the most about metalcore? Prove yourself
 by getting on top of the leaderboard of "guess that album". This is the ultimate test
