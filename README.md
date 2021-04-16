@@ -104,4 +104,5 @@ Data lifecycle diagram
 * [ ] add hints
 
 **Would haves**
+* [ ] Show incorrect guesses that have already been made
 * [ ] allow different genre's
