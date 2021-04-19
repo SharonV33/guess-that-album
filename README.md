@@ -56,8 +56,8 @@ By using a XMLHttpRequest on the link, I was able to get the data quite easily. 
 
 [comment]: <> (<img src="https://i.ibb.co/x3d6YrY/Screenshot-2021-02-05-at-10-27-03.png" width="500">)
 ```
-"Albums": {
-  "Album": [
+"Albums": {                     //general wrapper for all albums
+  "Album": [                    //single album entry
     {
             "name":             //Name of the album
             "mbid":             //Unique identifyer of the album
