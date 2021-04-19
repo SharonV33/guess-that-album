@@ -115,3 +115,8 @@ Data lifecycle diagram
 **Would haves**
 * [ ] Show incorrect guesses that have already been made
 * [ ] allow different genre's
+
+## :books: Resources
+* [last.FM api documentation](https://www.last.fm/api)
+* [Socket.io documentation](https://socket.io/)
+* [Node localstorage documentation](https://www.npmjs.com/package/node-localstorage)
