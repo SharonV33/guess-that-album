@@ -21,13 +21,14 @@ form.addEventListener('submit', (event) => {
 socket.on('message', function(message) {
     switch (message.type){
         case 'updateLeaderboard':
-            const leaderBoard = JSON.stringify(message.leaderBoard)
-            console.log(leaderBoard)
+            const leaderBoard = JSON.parse(message.leaderBoard)
+            console.log('leaderboard', leaderBoard)
             const leaderboardItems = leaderBoard
                 .map((item) => `<li>${item.name}: ${item.score}</li>`)
                 .join('')
+
             document
-                .querySelector('#leaderboard ul')
+                .querySelector('.leaderboard ol')
                 .innerHTML = leaderboardItems
 
             break;

@@ -1,10 +1,12 @@
-# Guess that album
+# Guess that album :guitar:
 [livelink](https://guessthatalbum.herokuapp.com/)
 <img src="https://i.ibb.co/2db0C76/Screenshot-2021-04-15-at-14-58-53.png">
+
 ## About the app
 Want to prove to your friends that you know the most about metalcore? Prove yourself
 by getting on top of the leaderboard of "guess that album". This is the ultimate test
-for any metalcore fans.
+for any metalcore fans. You will be able to see live results of the players who guessed 
+correctly.
 
 ## Installing
 clone the repo
@@ -71,6 +73,13 @@ with the type 'albumGuessed'. With this message type, I un-blur the album art, s
 I set a timeout in my project of 3 seconds to keep the un-blurred album on screen for a bit. Lastly, I emit a message with the type 'newAlbum'. This
 re-runs the function which saves a random album into the localstorage of the server and places this image into the page. After this the cycle starts again.
 
+## Real time events
+When you are playing a game online with a few friends, you want to know right away if someone scores a point. Constantly refreshing your browser can become quite
+tedious and annoying. This is why I implemented a few real time events into the album guesser. All of these events play out when a user correctly guesses the current 
+album. The first thing thar happens is that the album de-blurs, showing which album it was. The name of the user who made the correct guess will appear
+on the screen at this same moment, showing all users who won that round. As soon as these 2 events start, a timer is set for 3 seconds. After this, the user
+with the winning guess will be added to the scoreboard with their new score. Then, a new album will be loaded and blurred so that a new round can start
+
 ## Data management 
 Data lifecycle diagram
 <img src="https://i.ibb.co/JrLJ7gm/Screenshot-2021-04-13-at-12-23-24.png" width="500">
@@ -95,8 +104,8 @@ Data lifecycle diagram
 * [x] create point system based on correct guesses
 * [x] create leaderboard
 * [x] update album after correct guess
-* [ ] update leaderboard after correct guess
-* [ ] show winner's name after correct guess
+* [x] update leaderboard after correct guess
+* [x] show winner's name after correct guess
 
 **Could haves**
 * [ ] save username in localstorage
