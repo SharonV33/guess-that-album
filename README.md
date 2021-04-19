@@ -109,7 +109,7 @@ with the winning guess will be added to the scoreboard with their new score. The
 ## :file_folder: Data management 
 Data lifecycle diagram
 
-<img src="https://i.ibb.co/0jpQVGQ/Screenshot-2021-04-19-at-11-21-24.png" width="500">
+<img src="https://i.ibb.co/D9bR6X1/diagram.png" width="500">
 
 ## :hammer_and_wrench: NPM packages
 * Express.js - route handling
@@ -134,6 +134,7 @@ Data lifecycle diagram
 * [x] show winner's name after correct guess
 
 **Could haves**
+* [ ] filter api data to only what is needed
 * [ ] save username in localstorage
 * [ ] make points based on how fast the guess was made
 * [ ] add hints

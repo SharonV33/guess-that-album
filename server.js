@@ -105,20 +105,16 @@ io.on('connection', (socket) => {
                     io.emit('message', {
                         type: 'albumGuessed',
                         winner: message.username,
+                        leaderBoard: localStorage.getItem('leaderBoard')
                     })
-                    io.emit('message', {
-                        type: 'updateLeaderboard',
-                        leaderBoard: localStorage.getItem('leaderBoard'),
-                    })
+                    setTimeout(function () {
+                        io.emit('message', {
+                            type: 'newAlbum',
+                            album: localStorage.getItem('currentAlbum')
+                        })
+
+                    }, 3000)
                 }
-
-                setTimeout(function () {
-                    io.emit('message', {
-                        type: 'newAlbum',
-                        album: localStorage.getItem('currentAlbum')
-                    })
-
-                }, 3000)
 
                 break;
         }

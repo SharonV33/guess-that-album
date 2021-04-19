@@ -21,6 +21,11 @@ form.addEventListener('submit', (event) => {
 socket.on('message', function(message) {
     switch (message.type){
         case 'updateLeaderboard':
+
+
+            break;
+
+        case 'albumGuessed':
             const leaderBoard = JSON.parse(message.leaderBoard)
             console.log('leaderboard', leaderBoard)
             const leaderboardItems = leaderBoard
@@ -30,11 +35,6 @@ socket.on('message', function(message) {
             document
                 .querySelector('.leaderboard ol')
                 .innerHTML = leaderboardItems
-
-            break;
-
-        case 'albumGuessed':
-            // console.log('correct guess made by ', message.winner)
             // Set blur to false and show winner's name
             document
                 .querySelector('#blurAlbum')
