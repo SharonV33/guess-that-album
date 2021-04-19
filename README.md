@@ -54,7 +54,32 @@ with the url is required, I changed this to metalcore. The url can also be chang
 standard is 50 which I decided to keep for testing, this could easily be changed to a larger number for production
 By using a XMLHttpRequest on the link, I was able to get the data quite easily. The data I received looked like this:
 
-<img src="https://i.ibb.co/x3d6YrY/Screenshot-2021-02-05-at-10-27-03.png" width="500">
+[comment]: <> (<img src="https://i.ibb.co/x3d6YrY/Screenshot-2021-02-05-at-10-27-03.png" width="500">)
+```
+"Albums": {
+  "Album": [
+    {
+            "name":             //Name of the album
+            "mbid":             //Unique identifyer of the album
+            "url":              //Url to the last.fm page of the album
+            "artist":{
+                "name":         //Name of the artist
+                "mbid":         //Unique identifyer of the artist
+                "url":          //Link to the last.fm page of the artist
+            }
+            "image": [
+                {
+                    "#text":    //Image source
+                    "size":     //Image size
+                }
+            ]
+            "@attr": {
+                "rank":         //Album rank in most popular albums of that genre
+            }
+        }      
+  ]
+}
+```
 
 Each album has a name, an url to the related page on last.fm, a unique identifier, information about the artist and 4 formats
 of album art. This structure is repeated for each album, making it easy to create a template which I can fill with data.
