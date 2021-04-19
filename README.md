@@ -1,14 +1,26 @@
-# Guess that album :guitar:
+# :guitar: Guess that album :guitar:
 [livelink](https://guessthatalbum.herokuapp.com/)
 <img src="https://i.ibb.co/2db0C76/Screenshot-2021-04-15-at-14-58-53.png">
 
-## About the app
+## :microphone: About the app
 Want to prove to your friends that you know the most about metalcore? Prove yourself
 by getting on top of the leaderboard of "guess that album". This is the ultimate test
 for any metalcore fans. You will be able to see live results of the players who guessed 
 correctly.
 
-## Installing
+## :thinking: Concept
+Based on the requirements for this subject, I decided to create an album guessing game. This was inspired by my previous projects
+where I used the Last.fm API to let users browse metalcore albums. At the moment, metalcore is my favourite genre which is why I use
+this genre. Even though I never know what an album is called, I thought it would be fun to make a game around these albums. 
+
+By showing the user a blurred version of an album cover, the users can guess which album title belongs to the blurred image. In order
+to really make it a game, I use a score board where I keep track of the amount of correct guessed made by each user. After the album is
+guessed by a user, the album will de-blur for everyone playing at that moment. The name of the winner will also be displayed for a few
+seconds. After this a new album will be selected and shown (blurred) for the users to guess.
+first sketch: 
+<img src="https://i.ibb.co/ph2pX3Z/concept.jpg" width="500">
+
+## :gear: Installing
 clone the repo
 ```
 git clone https://github.com/SharonV33/guess-that-album.git
@@ -29,19 +41,8 @@ navigate to localhost in the browser
 ```
 http://localhost:8080/
 ```
-## Concept
-Based on the requirements for this subject, I decided to create an album guessing game. This was inspired by my previous projects
-where I used the Last.fm API to let users browse metalcore albums. At the moment, metalcore is my favourite genre which is why I use
-this genre. Even though I never know what an album is called, I thought it would be fun to make a game around these albums. 
 
-By showing the user a blurred version of an album cover, the users can guess which album title belongs to the blurred image. In order
-to really make it a game, I use a score board where I keep track of the amount of correct guessed made by each user. After the album is
-guessed by a user, the album will de-blur for everyone playing at that moment. The name of the winner will also be displayed for a few
-seconds. After this a new album will be selected and shown (blurred) for the users to guess.
-first sketch: 
-<img src="https://i.ibb.co/ph2pX3Z/concept.jpg" width="500">
-
-## Last.FM api
+## :musical_note: Last.FM api
 For this web app, I use data from the [last.FM api](https://www.last.fm/api). I've worked with this API a few times now, so I know my way around it.
 The specific type of data I want is the top albums from the genre "metalcore", Last.FM has a standard function url which allows me
 to get all the data I want from a single endpoint. This function is "get top albums". The url which I use as an endpoint is as follows 
@@ -59,7 +60,7 @@ Each album has a name, an url to the related page on last.fm, a unique identifie
 of album art. This structure is repeated for each album, making it easy to create a template which I can fill with data.
 
 
-## Working with sockets
+## :electric_plug: Working with sockets
 Before this project, sockets were completely new to me. This meant that I had to start on researching what sockets are and how they
 can be used. My teacher, Justus, showed an example in a lecture using "socket.io". After this lecture I made sure to read [the documentation](https://socket.io/)
 on the official website. I found the documentation quite easy to follow and there were quite a lot of examples. Together with the documentation
@@ -73,18 +74,18 @@ with the type 'albumGuessed'. With this message type, I un-blur the album art, s
 I set a timeout in my project of 3 seconds to keep the un-blurred album on screen for a bit. Lastly, I emit a message with the type 'newAlbum'. This
 re-runs the function which saves a random album into the localstorage of the server and places this image into the page. After this the cycle starts again.
 
-## Real time events
+## :clock830: Real time events
 When you are playing a game online with a few friends, you want to know right away if someone scores a point. Constantly refreshing your browser can become quite
 tedious and annoying. This is why I implemented a few real time events into the album guesser. All of these events play out when a user correctly guesses the current 
 album. The first thing thar happens is that the album de-blurs, showing which album it was. The name of the user who made the correct guess will appear
 on the screen at this same moment, showing all users who won that round. As soon as these 2 events start, a timer is set for 3 seconds. After this, the user
 with the winning guess will be added to the scoreboard with their new score. Then, a new album will be loaded and blurred so that a new round can start
 
-## Data management 
+## :file_folder: Data management 
 Data lifecycle diagram
 <img src="https://i.ibb.co/JrLJ7gm/Screenshot-2021-04-13-at-12-23-24.png" width="500">
 
-## NPM packages
+## :hammer_and_wrench: NPM packages
 * Express.js - route handling
 * HTTP - server management
 * Nodemon - hot reloads and script watching
@@ -94,8 +95,7 @@ Data lifecycle diagram
 * node-localstorage - server side local storage
 * compression - general server compression
 
-## To do
-
+## :white_check_mark: To do
 **Must have**
 * [x] set up sockets
 * [x] connect to last.fm api
