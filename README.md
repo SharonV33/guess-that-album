@@ -109,7 +109,7 @@ with the winning guess will be added to the scoreboard with their new score. The
 ## :file_folder: Data management 
 Data lifecycle diagram
 
-<img src="https://i.ibb.co/D9bR6X1/diagram.png" width="500">
+<img src="https://i.ibb.co/D9bR6X1/diagram.png" width="700">
 
 ## :hammer_and_wrench: NPM packages
 * Express.js - route handling
