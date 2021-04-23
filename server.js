@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 
@@ -23,7 +24,7 @@ localStorage = new LocalStorage('./localstorage')
  */
 async function selectRandomAlbum () {
     const genre = 'metalcore'
-    const url = `https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=${genre}&limit=100&api_key=b0cbd53d2ea5b525c2a0447aa31fcd10&format=json`
+    const url = `https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=${genre}&limit=100&api_key=${process.env.API_KEY}&format=json`
     const response = await fetch(url)
     const jsonResponse = await response.json()
     const data = jsonResponse.albums.album.filter((album) => album.mbid)
