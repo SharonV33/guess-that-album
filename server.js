@@ -33,6 +33,14 @@ async function selectRandomAlbum () {
     localStorage.setItem('currentAlbum', JSON.stringify(data[randomNumber]))
 }
 
+async function sendWrongAnswer (username, guess) {
+    io.emit('message', {
+        type: 'error',
+        username: username,
+        message: `${guess} is niet het goede antwoord.`,
+        leaderBoard: localStorage.getItem('leaderBoard')
+    })
+}
 /**
  * Checks if the answer is right and adds score to the user if it is
  * @param name
@@ -49,6 +57,7 @@ async function checkAnswer (name, guess) {
         await selectRandomAlbum()
         return true
     } else {
+        await sendWrongAnswer(name, guess)
         return false
     }
 }
@@ -94,7 +103,6 @@ app.get('/', async function(req, res) {
         leaderBoard: leaderBoard
     })
 })
-
 
 io.on('connection', (socket) => {
     socket.on('message', async (message) => {

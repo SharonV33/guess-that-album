@@ -61,6 +61,12 @@ socket.on('message', function(message) {
                 .innerHTML = ``
 
             break;
+
+        case 'error':
+            if (message.username === user.value) {
+                alert(message.message)
+            }
+            break;
     }
 })
 
